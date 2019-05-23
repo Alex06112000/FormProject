@@ -8,7 +8,7 @@ var db = mysql.createConnection({
 });
 db.connect( (err)=>{
   if(err)throw err;
-  console.log("Connected"); 
+ 
 });
 const app = express();
 //Creatre db
@@ -16,7 +16,7 @@ app.get('/createbd',(req,res)=>{
 let sql = 'CREATE DATABASE nodemysql';
 db.query(sql,(err,result)=>{
   if(err)throw err;
-  console.log(result);
+
   res.send('database created!');
 })
 });
@@ -59,7 +59,7 @@ app.get('/createpoststable', (req, res) => {
       }
       if (results.length  > 0) {
          var list=results;
-         console.log(list);
+       
          res.send(list);
       }
   });
@@ -68,7 +68,7 @@ app.get('/createpoststable', (req, res) => {
 
 
 app.listen('3000',()=>{
-   console.log("Server started on port 3000");  
+  
 });
 
 
